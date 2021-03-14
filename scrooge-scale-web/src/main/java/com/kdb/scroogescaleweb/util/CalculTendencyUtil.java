@@ -32,11 +32,11 @@ public class CalculTendencyUtil {
         if(step>3)  step = 3;
         else if(step<-3) step = -3;
 
-        LOGGER.info("STEP >>> "+step);
+        LOGGER.info("STEP >>>> "+step);
 
         result = map.get(step);
 
-        LOGGER.info("STEP >>> "+result);
+        LOGGER.info("RESULT >>>> "+result);
 
         return result;
     }
