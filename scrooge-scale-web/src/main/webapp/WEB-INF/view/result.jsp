@@ -9,10 +9,13 @@
   	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>result</title>
 	<c:import url="/WEB-INF/template/link.jsp" />
+	<style type="text/css" media="screen">
+     		.result_txt{ color : #EF5350;}
+      </style>
 </head>
 <body>
 <div class="container">
-	<h1> 당신은 <span> 구두쇠 성향이 거의 없어요 </span> </h1>
+	<h1> 당신은 구두쇠 성향이 <span class="result_txt"> 거의 없어요 </span> </h1>
 
 	<div class="box_detail">
 	<span> 돈을 쓰고 돌아다는 건 정말 신나고 재밌는 일이죠! </span>
