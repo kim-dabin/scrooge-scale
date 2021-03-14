@@ -15,7 +15,7 @@
 </head>
 <body>
 <div class="container">
-<<<<<<< HEAD
+
 	<h1> 당신은 구두쇠 성향이 <span class="result_txt"> ${type.detail} </span> </h1>
 
 	<div class="box_detail">
@@ -24,16 +24,6 @@
 
 	<div class="box_btn">
 	<button class="btn btn-outline-dark" data-clipboard-text="http://localhost/scrooge/result/${type.id}">링크 복사하기</button>
-=======
-	<h1> 당신은 구두쇠 성향이 <span class="result_txt"> 거의 없어요 </span> </h1>
-
-	<div class="box_detail">
-	<span> 돈을 쓰고 돌아다는 건 정말 신나고 재밌는 일이죠! </span>
-	</div><!--//.box_detail -->
-
-	<div class="box_btn">
-	<button class="btn btn-outline-dark" data-clipboard-text="카피하고 싶은 텍스트">링크 복사하기</button>
->>>>>>> cbdaeb7f97b44d65fc101ce6b27681c8fa40e782
 	<a class="btn btn-outline-dark" href="/scrooge"> 다시하기 </a>
 	</div><!--//.box_btn -->
 </div>

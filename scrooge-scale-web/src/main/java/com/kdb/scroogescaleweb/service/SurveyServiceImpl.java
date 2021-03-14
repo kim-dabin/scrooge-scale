@@ -4,21 +4,15 @@ import com.kdb.scroogescaleweb.dao.KafkaProducerDAO;
 import com.kdb.scroogescaleweb.dao.ResultDAO;
 import com.kdb.scroogescaleweb.dao.SurveyDAO;
 import com.kdb.scroogescaleweb.mapper.SurveyMapper;
-<<<<<<< HEAD
 import com.kdb.scroogescaleweb.util.CalculTendencyUtil;
-=======
->>>>>>> cbdaeb7f97b44d65fc101ce6b27681c8fa40e782
 import com.kdb.scroogescaleweb.util.MD5Util;
 import com.kdb.scroogescaleweb.model.Question;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.annotation.Transient;
 import org.springframework.stereotype.Service;
 
-<<<<<<< HEAD
 import java.util.HashMap;
 
-=======
->>>>>>> cbdaeb7f97b44d65fc101ce6b27681c8fa40e782
 @Service
 public class SurveyServiceImpl implements SurveyService {
     @Autowired
@@ -28,12 +22,9 @@ public class SurveyServiceImpl implements SurveyService {
     @Autowired
     private MD5Util md5Util;
     @Autowired
-<<<<<<< HEAD
     private CalculTendencyUtil calculTendencyUtil;
 
     @Autowired
-=======
->>>>>>> cbdaeb7f97b44d65fc101ce6b27681c8fa40e782
     private KafkaProducerDAO kafkaProducerDAO;
     @Autowired
     private ResultDAO resultDAO;
@@ -53,8 +44,8 @@ public class SurveyServiceImpl implements SurveyService {
     public int send(String message) {
         String[] values = message.split(",");
         String keyByMD5 = md5Util.getMD5(values[0]+values[1]);
-<<<<<<< HEAD
         int step = -1;
+
         if(kafkaProducerDAO.sendMessage(message)){
             HashMap<String, Double> map = resultDAO.selectStat();
             int userScore = resultDAO.selectUserScore(keyByMD5);
@@ -68,13 +59,6 @@ public class SurveyServiceImpl implements SurveyService {
         }
 
         return step;
-=======
-        if(kafkaProducerDAO.sendMessage(message)){
-            //Spark로 보내기
-            return 1;
-        }
 
-        return -1;
->>>>>>> cbdaeb7f97b44d65fc101ce6b27681c8fa40e782
     }
 }
