@@ -15,11 +15,18 @@ import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+<<<<<<< HEAD
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import scala.Tuple2;
 
 import java.util.HashMap;
+=======
+import scala.Tuple2;
+
+import java.util.HashMap;
+import java.util.List;
+>>>>>>> cbdaeb7f97b44d65fc101ce6b27681c8fa40e782
 import java.util.Map;
 import java.util.NavigableMap;
 
@@ -33,6 +40,7 @@ public class ResultDAOImpl implements ResultDAO{
     private JavaSparkContext sc;
     @Autowired
     private Configuration conf;
+<<<<<<< HEAD
     @Autowired
     private JedisPool jedisPool;
 
@@ -46,14 +54,32 @@ public class ResultDAOImpl implements ResultDAO{
     @Override
     public HashMap<String, Double> selectStat() {
         HashMap<String, Double> map = new HashMap<>();
+=======
+
+
+    @Override
+    public Map<String, Double> selectStat() {
+        Map<String, Double> map = new HashMap<>();
+>>>>>>> cbdaeb7f97b44d65fc101ce6b27681c8fa40e782
         JavaPairRDD<ImmutableBytesWritable, Result> javaPairRDD =
                 sc.newAPIHadoopRDD(conf, TableInputFormat.class, ImmutableBytesWritable.class, Result.class);
 
         JavaRDD<Integer> javaRDD = javaPairRDD.map(new ScanConvertFunction());
         Dataset<Integer> ds = sparkSession.createDataset(javaRDD.rdd(), Encoders.INT());
+<<<<<<< HEAD
        // ds.show();
         Dataset<Row> statDs = ds.select(avg("value").alias("avg"), stddev("value").alias("std"));
         statDs.show();
+=======
+        ds.show();
+        Dataset<Row> statDs = ds.select(avg("value").alias("avg"), stddev("value").alias("std"));
+        statDs.show();
+        List<Row> list = statDs.collectAsList();
+        for(Row r : list){
+            System.out.println("0 >> "+r.get(0));
+            System.out.println("1 >> "+r.get(1));
+        }
+>>>>>>> cbdaeb7f97b44d65fc101ce6b27681c8fa40e782
         statDs.collectAsList().forEach(row -> {
             Double avg = row.getAs("avg");
             Double std = row.getAs("std");

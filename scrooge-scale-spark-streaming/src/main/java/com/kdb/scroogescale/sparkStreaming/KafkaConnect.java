@@ -39,7 +39,11 @@ public class KafkaConnect {
         JavaStreamingContext ssc = new JavaStreamingContext(conf, new Duration(1000));
 
         Map<String, Object> params = new HashMap<>();
+<<<<<<< HEAD
         params.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "data-server-2:9093");
+=======
+        params.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "data-server-2:9092");
+>>>>>>> cbdaeb7f97b44d65fc101ce6b27681c8fa40e782
         params.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
         params.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
         params.put(ConsumerConfig.GROUP_ID_CONFIG, "Scrooge-Scale-Group");
@@ -57,7 +61,10 @@ public class KafkaConnect {
         config.addResource("/home/data/hadoop/etc/hadoop/hdfs-site.xml");
         config.addResource("/home/data/hadoop/etc/hadoop/core-site.xml");
         config.set("hbase.master", "data-server-1");
+<<<<<<< HEAD
         config.set("zookeeper.znode.parent","/hbase-unsecure");
+=======
+>>>>>>> cbdaeb7f97b44d65fc101ce6b27681c8fa40e782
         config.set("hbase.zookeeper.quorum", "data-server-1,data-server-2,data-server-3");
         config.set("hbase.zookeeper.property.clientPort", "2181");
 
