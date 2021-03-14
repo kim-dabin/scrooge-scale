@@ -1,0 +1,43 @@
+@charset "UTF-8";
+.container{
+    max-width: 720px;
+    /*background-color: yellow;*/
+   }
+   .row{
+    background-color: blue;
+   }
+   .answer{
+    font-size: 18px;
+    min-width: 200px;
+
+   }
+@media only screen and (max-width: 767.98px){
+  .answer{
+      min-width: 106.66px;
+      max-width: 255.99px;
+      font-size: xx-small;
+      /*background-color: yellow;*/
+    }
+  }
+
+
+    .flex-column{
+      /*background-color: blue;*/
+      margin: auto;
+    }
+
+    .badge{
+      font-size: 13px;
+    }
+    .prev{
+      font-size: 13px;
+    }
+    .contents{
+      margin: 30px 0 50px 0;
+    }
+    .show{
+        display:block;
+    }
+    .hide{
+        display:none;
+    }
