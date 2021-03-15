@@ -5,16 +5,17 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
-
+import java.util.Map;
 @Component
 public class CalculTendencyUtil {
-    private HashMap<Integer, Integer> map;
+    private Map<Integer, Integer> map;
     private final Logger LOGGER = LoggerFactory.getLogger(CalculTendencyUtil.class.getName());
     public CalculTendencyUtil(){
         map = new HashMap<>();
         map.put(3, 1);
         map.put(2,2);
         map.put(1,3);
+        map.put(0,3);
         map.put(-1,3);
         map.put(-2,4);
         map.put(-3,5);
