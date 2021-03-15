@@ -49,6 +49,7 @@ GCP(Google Cloud Platform)를 통해 데이터 파이프라인 서버를 구성�
 - Java8
 - GCP Compute Engine
 - CentOS 7
+- Springboot
 - Apach Hadoop 2.X
 - Apach Hbase 2.X
 - Apach Zookeeper
